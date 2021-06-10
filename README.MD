@@ -30,20 +30,19 @@ To read the configuration out of the config.ini file and the commandline, three 
 ### config.ini
 This file specifies the configuration for the program usage. It has to own the following parameters subordinated to a generic term. The necessary config-structure is listed below.
 
-<details><summary>['generic term']</summary>
- * **datatype**: type of the dataset(MNIST | CIFAR10 | ImageFolder)
- * **device**: device which should process the training or testing(gpu | cpu)
- * **learning_rate_gen**: learning rate of the adam algorithm for the generator
- * **learning_rate_disc**: learning rate of the adam algorithm for the discriminator
- * **z_dim**: z-dimension for the neuronal network
- * **image_dim_x**: intended image x-direction
- * **image_dim_y**: intended image y-direction
- * **batch_size**: number of batches per iteration
- * **gen_model_path**: relativ path for saving and loading the Generator model
- * **disc_model_path**: relativ path for saving and loading the Discriminator model
- * **dataset_path**: relativ path to the dataset
- * **logging_path**: relativ path where the tensorboard logs should be
-</details>
+['generic term']
+  - **datatype**: type of the dataset(MNIST | CIFAR10 | ImageFolder)
+  - **device**: device which should process the training or testing(gpu | cpu)
+  - **learning_rate_gen**: learning rate of the adam algorithm for the generator
+  - **learning_rate_disc**: learning rate of the adam algorithm for the discriminator
+  - **z_dim**: z-dimension for the neuronal network
+  - **image_dim_x**: intended image x-direction
+  - **image_dim_y**: intended image y-direction
+  - **batch_size**: number of batches per iteration
+  - **gen_model_path**: relativ path for saving and loading the Generator model
+  - **disc_model_path**: relativ path for saving and loading the Discriminator model
+  - **dataset_path**: relativ path to the dataset
+  - **logging_path**: relativ path where the tensorboard logs should be
 
 For an example take a look into the file where you can find the configuration for the MNIST-dataset.
 
@@ -62,8 +61,8 @@ To take a first look to the program you can start it in your python environment 
 python main.py
 ```
 It will create a Generator and a Discriminator network, train them for 10 iterations and save the results. Therefore the program will download the MNIST-Dataset and create a models and runs folder in the src folder directory. 
- * The models folder will contain a Discriminator.pth and a Generator.pth file with the trained models. 
- * The runs folder will contain log files for the run which you can display with the following command inside the python environment:
+* The models folder will contain a Discriminator.pth and a Generator.pth file with the trained models. 
+* The runs folder will contain log files for the run which you can display with the following command inside the python environment:
 ```bash
 tensorboard --logdir runs/MNIST/train/{foldername(timestamp)}
 ```
