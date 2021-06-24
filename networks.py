@@ -2,6 +2,7 @@
 Company: Reutlingen University
 Lecture: Machine Vision & Artificial Intelligence
 Created: May 22, 2021
+License: MIT
 
 In this file, the Generator and the Discriminator model are defined.
 """

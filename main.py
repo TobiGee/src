@@ -2,6 +2,11 @@
 Company: Reutlingen University
 Lecture: Machine Vision & Artificial Intelligence
 Created: May 22, 2021
+Based on: Aladdin Persson's implementation of a simple GAN
+          https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/1.%20SimpleGAN
+          https://www.youtube.com/watch?v=OljTVUVzPpM 
+LICENSE: MIT
+
 
 This is the main file for the implementation of a simple GAN in python using the framework pytorch.
 It uses following additional functions and classes:

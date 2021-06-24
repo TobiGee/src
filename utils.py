@@ -2,6 +2,7 @@
 Company: Reutlingen University
 Lecture: Machine Vision & Artificial Intelligence
 Created: May 22, 2021
+License: MIT
 
 In this utils-file are functions implemented which are used for reading the configurations.
 """
@@ -53,18 +54,18 @@ def read_config():
     This function reads the configuration for the training or testing process out of the config.ini file 
     and the commandline. Therefore you have to specifiy the following values in a set in the config file:
         ['set']
-        datatype            = str{type of the dataset(MNIST | CIFAR10 | ImageFolder)}
-        device              = str{device which should process the training or testing(gpu | cpu)}
-        learning_rate_gen   = int{learning rate of the adam algorithm for the generator}
-        learning_rate_disc  = int{learning rate of the adam algorithm for the discriminator}
-        z_dim               = int{z-dimension for the neuronal network}
-        image_dim_x         = int{intended image x-direction}
-        image_dim_y         = int{intended image y-direction}
-        batch_size          = int{number of batches per iteration}
-        gen_model_path      = str{relativ path for saving and loading the Generator model}
-        disc_model_path     = str{relativ path for saving and loading the Discriminator model}
-        dataset_path        = str{relativ path to the dataset}
-        logging_path        = str{relativ path where the tensorboard logs should be}
+        datatype                = str{type of the dataset(MNIST | CIFAR10 | ImageFolder)}
+        device                  = str{device which should process the training or testing(gpu | cpu)}
+        learning_rate_gen_ada   = int{learning rate of the adam algorithm for the generator}
+        learning_rate_disc_ada  = int{learning rate of the adam algorithm for the discriminator}
+        z_dim                   = int{z-dimension for the neuronal network}
+        image_dim_x             = int{intended image x-direction}
+        image_dim_y             = int{intended image y-direction}
+        batch_size              = int{number of batches per iteration}
+        gen_model_path          = str{relativ path for saving and loading the Generator model}
+        disc_model_path         = str{relativ path for saving and loading the Discriminator model}
+        dataset_path            = str{relativ path to the dataset}
+        logging_path            = str{relativ path where the tensorboard logs should be}
 
 
     Returns:
@@ -114,8 +115,8 @@ def read_config():
            config['device'] = 'cuda'
         else:
             config['device'] = 'cpu'
-    config['lr_gen'] = float(config_parser[hypset]['learning_rate_gen'])
-    config['lr_disc'] = float(config_parser[hypset]['learning_rate_disc'])
+    config['lr_gen'] = float(config_parser[hypset]['learning_rate_gen_ada'])
+    config['lr_disc'] = float(config_parser[hypset]['learning_rate_disc_ada'])
     config['z_dim'] = int(config_parser[hypset]['z_dim'])    
     config['image_dim_x'] = int(config_parser[hypset]['image_dim_x'])
     config['image_dim_y'] = int(config_parser[hypset]['image_dim_y'])
